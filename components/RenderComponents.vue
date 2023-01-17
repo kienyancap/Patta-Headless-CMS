@@ -16,9 +16,9 @@
         :data="component.hero_banner"
       />
       <HeroBanner
-        v-if="component.hero_banner && page !== 'Home'"
-        :key="'hero_banner' + index"
-        title="about-content"
+        v-if="component.hero_banner && page !== 'Products'"
+        :key="'products' + index"
+        title="products-content"
         :data="component.hero_banner"
       />
       <Section
@@ -61,12 +61,16 @@
         :key="'section_with_html_code' + index"
         :data="component.section_with_html_code"
       />
+      <ProductList
+        v-if="component.product_list"
+        :key="'products' + index"
+        :data="component.product_list"
+      />
     </template>
   </main>
 </template>
 
 <script lang="ts">
-
 import BlogSection from '../components/BlogSection.vue'
 import AboutSectionBucket from '../components/AboutSectionBucket.vue'
 import SectionWithBuckets from '../components/SectionWithBuckets.vue'
@@ -76,6 +80,7 @@ import SectionWithCards from '../components/SectionWithCards.vue'
 import HeroBanner from '../components/HeroBanner.vue'
 import Section from './SectionComponent.vue'
 import Devtools from './DevTools.vue'
+import ProductList from '../components/ProductList.vue'
 
 export default {
   components: {
@@ -87,25 +92,26 @@ export default {
     TeamSection,
     BlogSection,
     SectionWithEmbedObject,
-    Devtools
+    Devtools,
+    ProductList,
   },
   props: {
     components: {
       required: true,
-      type: Array
+      type: Array,
     },
     page: {
       required: true,
-      type: String
+      type: String,
     },
     entryUid: {
       required: true,
-      type: String
+      type: String,
     },
     locale: {
       required: true,
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 }
 </script>
