@@ -21,11 +21,7 @@
         title="products-content"
         :data="component.hero_banner"
       />
-      <Section
-        v-if="component.section"
-        :key="'section' + index"
-        :data="component.section"
-      />
+
       <BlogSection
         v-if="component.from_blog"
         :key="'from_blog' + index"
@@ -86,13 +82,11 @@ import SectionWithCards from '../components/SectionWithCards.vue'
 import HeroBanner from '../components/HeroBanner.vue'
 import ProductList from '../components/ProductList.vue'
 import SneakerProducts from '../components/SneakerProducts.vue'
-import Section from './SectionComponent.vue'
 import Devtools from './DevTools.vue'
 
 export default {
   components: {
     HeroBanner,
-    Section,
     SectionWithBuckets,
     AboutSectionBucket,
     SectionWithCards,

@@ -22,16 +22,20 @@ export default {
     NotFound
   },
   async asyncData(req: PageData) {
+    console.log('asyncdata index.vue');
     const data = await Stack.getEntryByUrl({
       contentTypeUid: 'page',
       entryUrl: `${req.route.fullPath}`,
-      referenceFieldPath: ['page_components.from_blog.featured_blogs'],
+      referenceFieldPath: [
+        
+        'page_components.product_list.products'
+       ]
+      ,
       jsonRtePath: [
-        'page_components.from_blog.featured_blogs.body',
-        'page_components.section_with_buckets.buckets.description'
+      
       ],
     })
-
+console.log( 'data', data[0].page_components[0].product_list.products[0].image)
     return {
       data: data[0],
     }
@@ -52,6 +56,7 @@ export default {
 
   mounted() {
     onEntryChange(async () => {
+      console.log('onEntryChange');
       if (process.env.CONTENTSTACK_LIVE_PREVIEW === 'true') {
         const response = await this.fetchData()
         this.data = response[0]
@@ -65,10 +70,11 @@ export default {
       const result = await Stack.getEntryByUrl({
         contentTypeUid: 'page',
         entryUrl: `${this.$route.fullPath}`,
-        referenceFieldPath: ['page_components.from_blog.featured_blogs'],
+        referenceFieldPath: ['page_components.product_list.products',
+      'page_components.product_list.products.product_details.sku',
+      'page_components.product_list.products.product_details.image'],
         jsonRtePath: [
-          'page_components.from_blog.featured_blogs.body',
-          'page_components.section_with_buckets.buckets.description',
+
         ],
       })
       const element: HTMLCollection = document.getElementsByClassName('cslp-tooltip')

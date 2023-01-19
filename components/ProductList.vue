@@ -9,12 +9,13 @@
       >
         <img 
           class="product-list-img"
-          :src="products.image.url"
-          alt="products.image.title"
+          :src="products.product_details.image.url"
+          alt="products.product_details.image.title"
         />
         <h2 class="product-name">
           {{ products.title }}
         </h2>
+        <p>{{ products.product_details.image }}</p>
       </NuxtLink>
     </template>
   </div>
