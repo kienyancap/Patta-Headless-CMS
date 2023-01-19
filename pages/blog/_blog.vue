@@ -58,7 +58,7 @@ export default {
       const data = await Stack.getEntryByUrl({
         contentTypeUid: 'blog_post',
         entryUrl: `${req.route.fullPath}`,
-        referenceFieldPath: [`related_post`, `author`],
+        referenceFieldPath: [`related_post`, `author`], 
         jsonRtePath: ['body', 'related_post.body'],
       })
       return {

@@ -9,8 +9,8 @@
       >
         <img 
           class="product-list-img"
-          :src="products.product_details.image.url"
-          alt="products.product_details.image.title"
+          :src="products.image.url"
+          alt="products.image.title"
         />
         <h2 class="product-name">
           {{ products.title }}
@@ -24,7 +24,6 @@
 export default {
   props: ['data'],  
 }
-
 </script>
 
 <style scoped>

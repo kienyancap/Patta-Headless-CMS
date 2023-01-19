@@ -1,5 +1,6 @@
 <template>
   <main>
+    {{ JSON.stringify(data) }}
     <div
       class="product-container"
       :data-pageref="data.uid"
@@ -8,7 +9,7 @@
     >
       <div class="product-detail">
         <Products :data="data" />
-      </div>
+      </div> 
     </div>
   </main>
 </template>
@@ -23,17 +24,15 @@ export default {
   },
   async asyncData(req) {
     try {
+      console.log('hello');
       const data = await Stack.getEntryByUrl({
-        contentTypeUid: 'products',
         entryUrl: `${req.route.fullPath}`,
         referenceFieldPath: [
-          'page_components.sku',
-          'page_components.products',
-          'page_components.products.product_details.image'
+          'page_components.product_list.products',
+          'page_components.product_list.products.product_details.sku',
         ],
         jsonRtePath: ['description'],
       })
-      console.log('hallo', data);
       return {
         data: data[0],
       }

@@ -66,6 +66,12 @@
         :key="'products' + index"
         :data="component.product_list"
       />
+      <SneakerProducts
+        v-if="component.sneaker_products"
+        :key="'sneaker_products' + index"
+        :data="component.sneaker_products"
+      />
+       {{ component }} {{ index }}
     </template>
   </main>
 </template>
@@ -78,9 +84,10 @@ import SectionWithEmbedObject from '../components/SectionWithEmbedObject.vue'
 import TeamSection from '../components/TeamSection.vue'
 import SectionWithCards from '../components/SectionWithCards.vue'
 import HeroBanner from '../components/HeroBanner.vue'
+import ProductList from '../components/ProductList.vue'
+import SneakerProducts from '../components/SneakerProducts.vue'
 import Section from './SectionComponent.vue'
 import Devtools from './DevTools.vue'
-import ProductList from '../components/ProductList.vue'
 
 export default {
   components: {
@@ -94,6 +101,7 @@ export default {
     SectionWithEmbedObject,
     Devtools,
     ProductList,
+    SneakerProducts
   },
   props: {
     components: {

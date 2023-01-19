@@ -17,9 +17,9 @@ export default {
     const data = await Stack.getEntryByUrl({
       contentTypeUid: 'page',
       entryUrl: `${req.route.fullPath}`,
-      referenceFieldPath: ['page_components.product_list.products',
-      'page_components.product_list.products.product_details.sku',
-      'page_components.product_list.products.product_details.image'
+      referenceFieldPath: [
+          'page_components.product_list.products',
+          'page_components.product_list.products.product_details.sku',
       ],
     })
     return {

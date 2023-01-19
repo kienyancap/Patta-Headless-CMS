@@ -89,7 +89,7 @@ export default {
     })
     const list: [List] = await Stack.getEntries({
       contentTypeUid: 'blog_post',
-      referenceFieldPath: [`author`, `related_post`],
+      referenceFieldPath: [`author`, `related_post`], 
       jsonRtePath: ['body'],
     })
     list.forEach((item) => {

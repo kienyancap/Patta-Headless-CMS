@@ -28,7 +28,7 @@ export default {
       referenceFieldPath: ['page_components.from_blog.featured_blogs'],
       jsonRtePath: [
         'page_components.from_blog.featured_blogs.body',
-        'page_components.section_with_buckets.buckets.description',
+        'page_components.section_with_buckets.buckets.description'
       ],
     })
 
