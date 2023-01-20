@@ -9,23 +9,19 @@
       <Devtools />
     </ClientOnly>
     <template v-for="(component, index) in components">
-      <HeroBanner
+      <!-- <HeroBanner
         v-if="component.hero_banner && page === 'Home'"
         :key="'hero_banner' + index"
         title="home-content"
         :data="component.hero_banner"
-      />
+      /> -->
       <HeroBanner
         v-if="component.hero_banner && page !== 'Products'"
         :key="'products' + index"
-        title="products-content"
+        title="product-content"
         :data="component.hero_banner"
       />
-      <Section
-        v-if="component.section"
-        :key="'section' + index"
-        :data="component.section"
-      />
+
       <BlogSection
         v-if="component.from_blog"
         :key="'from_blog' + index"
@@ -63,13 +59,8 @@
       />
       <ProductList
         v-if="component.product_list"
-        :key="'products' + index"
+        :key="'product' + index"
         :data="component.product_list"
-      />
-      <SneakerProducts
-        v-if="component.sneaker_products"
-        :key="'sneaker_products' + index"
-        :data="component.sneaker_products"
       />
        {{ component }} {{ index }}
     </template>
@@ -86,13 +77,11 @@ import SectionWithCards from '../components/SectionWithCards.vue'
 import HeroBanner from '../components/HeroBanner.vue'
 import ProductList from '../components/ProductList.vue'
 import SneakerProducts from '../components/SneakerProducts.vue'
-import Section from './SectionComponent.vue'
 import Devtools from './DevTools.vue'
 
 export default {
   components: {
     HeroBanner,
-    Section,
     SectionWithBuckets,
     AboutSectionBucket,
     SectionWithCards,
@@ -101,7 +90,6 @@ export default {
     SectionWithEmbedObject,
     Devtools,
     ProductList,
-    SneakerProducts
   },
   props: {
     components: {

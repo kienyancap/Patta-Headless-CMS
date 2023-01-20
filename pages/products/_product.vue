@@ -16,16 +16,17 @@
 
 <script>
 import Stack from '../../plugins/contentstack'
-import SneakerProducts from '../../components/SneakerProducts.vue'
+import Products from '../../components/Products.vue'
 
 export default {
   components: {
-    SneakerProducts,
+    Products,
   },
   async asyncData(req) {
     try {
       console.log('hello');
       const data = await Stack.getEntryByUrl({
+        contentTypeUid: 'products',
         entryUrl: `${req.route.fullPath}`,
         referenceFieldPath: [
           'page_components.product_list.products',

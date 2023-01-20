@@ -15,6 +15,7 @@
         <h2 class="product-name">
           {{ products.product_details.image }}
         </h2>
+        <p>{{ products.product_details.image }}</p>
       </NuxtLink>
     </template>
   </div>
