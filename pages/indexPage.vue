@@ -25,7 +25,8 @@ export default {
     const data = await Stack.getEntryByUrl({
       contentTypeUid: 'page',
       entryUrl: `${req.route.fullPath}`,
-      referenceFieldPath: ['page_components.from_blog.featured_blogs'],
+      referenceFieldPath: ['page_components.from_blog.featured_blogs',
+      'page_components.product_list.products'],
       jsonRtePath: [
         'page_components.from_blog.featured_blogs.body',
         'page_components.section_with_buckets.buckets.description'
@@ -65,7 +66,9 @@ export default {
       const result = await Stack.getEntryByUrl({
         contentTypeUid: 'page',
         entryUrl: `${this.$route.fullPath}`,
-        referenceFieldPath: ['page_components.from_blog.featured_blogs'],
+        referenceFieldPath: ['page_components.from_blog.featured_blogs',
+        'page_components.product_list.products.product_details.sku',
+        'page_components.product_list.products.product_details.image'],
         jsonRtePath: [
           'page_components.from_blog.featured_blogs.body',
           'page_components.section_with_buckets.buckets.description',
