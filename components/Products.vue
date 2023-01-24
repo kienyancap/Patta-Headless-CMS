@@ -1,25 +1,27 @@
 <template>
-  <div class="product-wrapper">
-    <div class="blog-container">
-      <div class="blog-column-left">
-        <section class="product-section">
-          <div class="product-img-wrapper">
-            <img
-              :src="data.product_details.image.url"
-              class="product-img"
-              :alt="data.product_details.image.title"
-            />
-          </div>
-          <h1 class="product-title">{{ data.title }}</h1>
-        </section>
-      </div>
+  <!-- <div class="product-wrapper"> -->
+  <div class="blog-container">
+    <div class="blog-column-left">
+      <section class="product-section">
+        <div class="product-img-wrapper">
+          <img
+            :src="data.product_details.image.url"
+            class="product-img"
+            :alt="data.product_details.image.title"
+          />
+        </div>
+      </section>
     </div>
     <div class="product-description">
+      <h1 class="product-title">{{ data.title }}</h1>
       <h2>Description</h2>
       <div v-html="data.description" />
-      <h4>SKU: {{ data.product_details.sku[0].sku }}</h4>
+       <p>Rating: {{ data.custom }}</p>
+      <h4>SKU: {{ data.product_details.sku[0].sku }}</h4>     
     </div>
   </div>
+
+  <!-- </div> -->
 </template>
 
 <script>
@@ -42,20 +44,14 @@ export default {
   max-width: 100%;
 }
 
-.blog-container {
-  font-family: f1-regular;
-  background-color: green;
-}
-
 .product-section {
   display: flex;
   max-width: 100%;
   flex-direction: column;
   font-family: f1-regular;
-  background-color: yellow;
 }
 
-.product-title {
+/* .product-title {
   font-family: f1-bold;
   font-size: 4.2rem;
   line-height: 1.142;
@@ -78,5 +74,5 @@ export default {
   max-width: 1050px;
   background: #fff;
   margin: 0 auto;
-}
+} */
 </style>

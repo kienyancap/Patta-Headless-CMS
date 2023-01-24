@@ -21,7 +21,6 @@
         title="product-content"
         :data="component.hero_banner"
       />
-
       <BlogSection
         v-if="component.from_blog"
         :key="'from_blog' + index"
@@ -62,7 +61,6 @@
         :key="'product' + index"
         :data="component.product_list"
       />
-       {{ component }} {{ index }}
     </template>
   </main>
 </template>

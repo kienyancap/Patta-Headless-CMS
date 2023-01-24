@@ -249,7 +249,7 @@ footer a {
 .blog-container {
   margin: 53px auto 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
 }
 
@@ -275,12 +275,12 @@ footer a {
 .blog-column-right {
   display: flex;
   flex-direction: column;
-  padding: 60px;
+  /* padding: 60px; */
 }
 
-.blog-column-left {
+/* .blog-column-left {
   width: 690px;
-}
+} */
 
 .blog-column-right {
   width: 360px;

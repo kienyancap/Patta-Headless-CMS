@@ -1,6 +1,5 @@
 <template>
   <div class="product-list-container">
-    <h1>{{ data.title }}</h1>
     <template v-for="(products, index) in data.products">
       <NuxtLink
         :key="index"
@@ -30,8 +29,6 @@ export default {
 <style scoped>
 .product-list-container {
   background: #fff;
-  padding: 60px;
-  max-width: 1050px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -53,7 +50,6 @@ export default {
 
 h1 {
   flex-basis: 100%;
-  font-family: f1-black;
   font-size: 62px;
   line-height: 62px;
   margin: 0;
