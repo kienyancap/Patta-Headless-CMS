@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './pages/indexPage.vue';
 import Blog from './pages/blog/indexPage.vue';
 import BlogPost from './pages/blog/_blog.vue';
+import Product from './pages/products/_product.vue';
 import NotFound from './layouts/ErrorLayout.vue';
 
 Vue.use(Router)
@@ -27,6 +28,10 @@ export function createRouter() {
       {
         path: '/:page',
         component: Home,
+      },
+      {
+        path: '/products/:slug',
+        component: Product,
       },
       {
         path: '/:pathMatch(.*)*',
